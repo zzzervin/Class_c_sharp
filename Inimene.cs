@@ -12,11 +12,11 @@ namespace Class_c_sharp
         Emakeel emakeel;
         public Inimene() { }//конструктор
 
-        public Inimene(string Eesnimi,Emakeel emakeel)
+        public Inimene(string Eesnimi,Vanus)
         {
             eesnimi = Eesnimi;
-            this.emakeel = emakeel;
-            //vanus = Vanus;
+            //this.emakeel = emakeel;
+            vanus = Vanus;
         }
 
         public Emakeel Emakeel
@@ -38,25 +38,7 @@ namespace Class_c_sharp
         {
             set
             { vanus = value;
-                if (vanus < 7)
-                {
-                    staatus = "vaike laps";
-                }
-
-                else if (vanus < 17)
-                {
-                    staatus = "kooli laps";
-                }
-
-                else if (vanus < 65)
-                {
-                    staatus = "tööline laps";
-                }
-
-                else
-                {
-                    staatus = "senior";
-                }
+               
                 
             }
             get { return vanus; }
@@ -65,14 +47,25 @@ namespace Class_c_sharp
         }
         public string Staatus
         {
-            set { if(staatus==null)staatus = value;}
-            get { return staatus; }
+            
+            get 
+            {
+                var staatus="";
+                 if (vanus < 7)
+                {staatus = "vaike laps";}
+                else if (vanus < 17)
+                {  staatus = "kooli laps";}
+                else if (vanus < 65)
+                {  staatus = "tööline laps";}
+                else
+                {staatus = "senior";}
+              return staatus  }
 
         }
         public void Tervetame()
         {
             Console.WriteLine("Tere");
-            Console.WriteLine("Minu nimi on {0} . Olen {1} aastat vana. Minu staatus {2}{3} ", eesnimi, vanus, staatus,emakeel);
+            Console.WriteLine("Minu nimi on {0} . Olen {1} aastat vana. Minu staatus {2} ", eesnimi, vanus, staatus);
         }
 
         

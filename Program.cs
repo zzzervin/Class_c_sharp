@@ -33,7 +33,7 @@ namespace Class_c_sharp
             mees.Tervetame();
 
 
-            Inimene naine = new Inimene("Marina",Emakeel.inglise);
+            Inimene naine = new Inimene("Marina",18);
             naine.Tervetame();
 
             
